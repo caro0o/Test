@@ -1,5 +1,5 @@
 /**
- * @brief Test class for doxygen (travis ci generated!)
+ * @brief Test class for doxygen (travis ci generated!!)
  */
 class Test
 {
