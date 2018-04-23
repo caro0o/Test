@@ -1,35 +1,26 @@
-# This will run on Travis' 'new' container-based infrastructure
 sudo: false
-
-# Blacklist
 branches:
   only:
-    - master
-
-# Environment variables
+  - master
 env:
   global:
-    - GH_REPO_REF: github.com/caro0o/Test
-
-# Install dependencies
+  - GH_REPO_REF: github.com/caro0o/Test
+  matrix:
+    secure: VpaydOhJzQD/STJdryYNPGTBTmXsoT5dGOSVa+MT/LJQErJvdpThPtXkoGfc5/YP71lwCVvGxHPIpDsN3IB+73RMeM3zqWI5azGT2+9GL0bqT5toyZ+aSSWF9nF+fZ//bsQ9lS33k5XzEBfckr3PE/4Pk8aUhgsfp7PeI7MlCpqVpRcFnf19HBLMLgRuaKboaXGictlI875oPbZw7YpAefc8x/RsJtn/ZKz/gogMOCIuyUNTvaS7MBpXcUl3cmuKrMeFuymL/Xo+FIZc8NY6Wwp3NLkMt5C5fgVpnxdfhpvROejAwBgFKiKo5enWrRzRpWGqvS/m9PvGnTuyQuz+qk8uq7rW9EzpcEaTqg1Baoyll5egOmrcS4aSH2fRq4CBCAix5nfmkICI2FZB5UL7S7CwZkkyGdHK8IZrzzXbslyW9KXLW0etug6aqwvg1XJuNKLWK4IQ3QCz67qfcmEwqXXtAK4VEjP/xrpT4e6bE0hr8OKKhx4x9zWy0GFwljMRsL9MuoXc/ZYoZVfzOf/HV59yPE/xg/FJXl0o71bEVN0cVvt0OtqEf42yBJYFuEzI0lCAXG2wnp7NkkvkbUi7HJ1bn1lcslcDxIwmeGmaU++njaEqN67ArfeGsMh6B7pohtklEDaC1NDsOJglX+61G+OXkpR4N2GiT4IsYP6Rpjg=
 addons:
   apt:
     packages:
-      - doxygen
-      - doxygen-doc
-      - doxygen-latex
-      - doxygen-gui
-      - graphviz
-
-# Build your code e.g. by calling make
+    - doxygen
+    - doxygen-doc
+    - doxygen-latex
+    - doxygen-gui
+    - graphviz
 script:
-  - doxygen
-
-# Deploy using travis builtin GitHub Pages support
+- doxygen
 deploy:
   provider: pages
   skip_cleanup: true
-  local_dir: $TRAVIS_BUILD_DIR/html
-  github_token: $GITHUB_API_KEY
-  on:
+  local_dir: "$TRAVIS_BUILD_DIR/html"
+  github_token: "$GITHUB_API_KEY"
+  on: 
 branch: master
