@@ -20,6 +20,6 @@ deploy:
   provider: pages
   skip_cleanup: true
   local_dir: html
-  github_token: "$GITHUB_TOKEN_ENCRYPTED"
+  github_token: "$secure"
   on: 
 branch: master
